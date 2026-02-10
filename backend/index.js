@@ -14,7 +14,12 @@ const SECRET_KEY = "mysecret123";
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+const cors = require("cors");
+
+app.use(cors({
+  origin: "*"
+}));
+
 
 mongoose.connect("mongodb://127.0.0.1:27017/fullstackDB")
   .then(() => console.log("MongoDB connected"))
