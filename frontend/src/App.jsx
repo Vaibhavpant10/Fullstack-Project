@@ -144,7 +144,7 @@ export default function App() {
   // =========================
   const handleLogin = async () => {
     try {
-      const res = await fetch("http://localhost:3000/login", {
+      const res = await fetch("https://fullstack-project-add-notes.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -176,7 +176,7 @@ export default function App() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:3000/add-note", {
+      const res = await fetch("https://fullstack-project-add-notes.onrender.com/add-note", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -208,7 +208,7 @@ export default function App() {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `http://localhost:3000/notes/${userId}`,
+        `https://fullstack-project-add-notes.onrender.com/notes/${userId}`,
         {
           headers: {
             authorization: token
@@ -232,7 +232,7 @@ export default function App() {
   const deleteNote = async (id) => {
   const token = localStorage.getItem("token");
 
-  await fetch(`http://localhost:3000/delete-note/${id}`, {
+  await fetch(`https://fullstack-project-add-notes.onrender.com/delete-note/${id}`, {
     method: "DELETE",
     headers: {
       authorization: token
@@ -250,7 +250,7 @@ const editNote = async (id) => {
 
   const token = localStorage.getItem("token");
 
-  await fetch(`http://localhost:3000/update-note/${id}`, {
+  await fetch(`https://fullstack-project-add-notes.onrender.com/update-note/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
